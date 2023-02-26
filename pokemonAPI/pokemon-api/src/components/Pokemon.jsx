@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios';
 
 const Pokemon = () => {
 
-    const [pokemon, setPokemon] = useState([])
+    const [responseData, setResponseData] = useState([]);
 
     useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon')
-            .then(response => response.json())
-            .then(response => setPokemon(response.results))
+        axios.get('https://pokeapi.co/api/v2/pokemon')
+            .then(response => {setResponseData(response.data.results)})
     }, []);
- 
+
     return (
         <div>
             {
-                pokemon.map((p, i) => {
+                responseData.map((p, i) => {
                     return <p key={i}>{p.name}</p>
                 })
             }
