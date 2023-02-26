@@ -1,6 +1,10 @@
-/* .App {
-  text-align: center;
-} */
+.bold {
+  font-weight: bold;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
 
 .App-logo {
   height: 40vmin;
