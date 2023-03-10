@@ -1,0 +1,55 @@
+MAKE NEW PROJECT:
+	
+    mkdir newProject
+	cd newProject
+    
+    npx create-react-app client
+	npm install axios react-router-dom
+
+	mkdir server
+	cd server
+	npm init -y
+	npm install express mongoose cors nodemon
+	mkdir config controllers models routes
+	touch server.js
+    touch .gitignore --> (add /node_modules)
+	
+	cd ..
+
+    Gray's Walkthru
+
+        npx create-react-app client
+            npm install axios react-router-dom
+
+        mkdir server
+        cd server
+            npm init -y
+            npm install express mongoose cors nodemon
+            mkdir config controllers models routes
+                        config -> mongoose.config.js
+                        controllers -> {database}.controller.js
+                        models -> {database}.model.js
+                        routes -> {database}.routes.js
+            touch server.js
+            touch .gitignore 
+                (add /node_modules)
+        
+
+SERVER.JS 
+
+    const express = require('express');
+    const cors = require('cors');
+    const app = express();
+    const port = 8000;
+
+    require('./config/mongoose.config');
+
+    app.use(cors());
+    app.use(express.json(), express.urlencoded({ extended: true }));
+
+    // require('./routes/{product}.routes')(app); <--- change product to match project
+    app.listen(port, () => console.log(`Listening on port: ${port}`) );
+
+
+
+
