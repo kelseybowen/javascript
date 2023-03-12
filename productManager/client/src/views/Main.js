@@ -5,7 +5,7 @@ import ProductList from '../components/ProductList';
 
 const Main = (props) => {
 
-    const [products, setProducts] = useState([]);
+    const {products, setProducts} = props;
     
     return (
         <div>
