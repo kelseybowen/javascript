@@ -1,0 +1,6 @@
+select, option {
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 0px;
+}
